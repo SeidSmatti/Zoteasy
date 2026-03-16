@@ -1,0 +1,10 @@
+{
+  "id": "zoteasy",
+  "name": "Zoteasy",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Seamless Zotero integration: import literature notes and annotations directly from your Zotero library.",
+  "author": "djengo",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}

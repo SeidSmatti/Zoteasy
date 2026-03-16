@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Zoteasy — plugin styles
+   All selectors are scoped to Zoteasy-specific classes or custom callout
+   types so nothing bleeds into the rest of the vault.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Search / citation modal — suggestion rows
+   -------------------------------------------------------------------------- */
+
+.zoteasy-suggestion-title {
+  font-size: var(--font-ui-medium);
+  font-weight: var(--font-semibold);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.zoteasy-suggestion-meta {
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Synthesis callout  [!zoteasy-synthesis]
+   A custom callout type so these can be styled independently of all other
+   [!note] callouts in the vault.
+   -------------------------------------------------------------------------- */
+
+.callout[data-callout="zoteasy-synthesis"] {
+  /* Soft purple/lavender tint — distinct from source-quote blue/yellow */
+  --callout-color: 150, 100, 220;
+  --callout-icon: lucide-pencil-line;
+
+  background-color: rgba(var(--callout-color), 0.04);
+  border-left-color: rgba(var(--callout-color), 0.35);
+  border-left-style: dashed;
+}
+
+.callout[data-callout="zoteasy-synthesis"] .callout-title {
+  color: rgba(var(--callout-color), 0.75);
+  font-size: var(--font-ui-smaller);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* When the synthesis block is still empty (only the HTML comment inside),
+   dim the title further to signal that it is waiting for input. */
+.callout[data-callout="zoteasy-synthesis"] .callout-content:empty,
+.callout[data-callout="zoteasy-synthesis"] .callout-content:not(:has(> :not(p:empty))) {
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------------------------------
+   "Open in Zotero" link styling inside annotation callout titles.
+   Targets only the link element within the title line, keeping it secondary
+   to the page number. Uses attribute selectors on built-in callout types
+   so the scope is limited to the title-inner element only.
+   -------------------------------------------------------------------------- */
+
+.callout[data-callout="quote"] .callout-title-inner a,
+.callout[data-callout="info"] .callout-title-inner a {
+  font-weight: var(--font-normal);
+  font-size: var(--font-ui-smaller);
+  opacity: 0.8;
+}

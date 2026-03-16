@@ -1,0 +1,21 @@
+{
+  "name": "zoteasy",
+  "version": "0.1.0",
+  "description": "Seamless Zotero integration for Obsidian",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production"
+  },
+  "keywords": ["obsidian", "zotero", "research", "citations", "literature"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.21.5",
+    "obsidian": "latest",
+    "tslib": "^2.6.2",
+    "typescript": "^5.0.4"
+  }
+}
