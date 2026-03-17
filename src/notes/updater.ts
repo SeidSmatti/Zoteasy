@@ -14,7 +14,6 @@ import {
   DEFAULT_NOTE_OPTIONS,
 } from "./formatter";
 import type { NoteOptions } from "./formatter";
-import { t } from "../i18n";
 
 export interface UpdateResult {
   content: string;

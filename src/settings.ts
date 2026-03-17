@@ -45,7 +45,7 @@ export class ZoteasySettingTab extends PluginSettingTab {
     // -------------------------------------------------------------------------
     // Zotero connection
     // -------------------------------------------------------------------------
-    containerEl.createEl("h2", { text: t("settingsZoteroTitle") });
+    new Setting(containerEl).setName(t("settingsZoteroTitle")).setHeading();
 
     new Setting(containerEl)
       .setName(t("settingsPortName"))
@@ -105,7 +105,7 @@ export class ZoteasySettingTab extends PluginSettingTab {
     // -------------------------------------------------------------------------
     // Output locations
     // -------------------------------------------------------------------------
-    containerEl.createEl("h2", { text: t("settingsOutputTitle") });
+    new Setting(containerEl).setName(t("settingsOutputTitle")).setHeading();
 
     new Setting(containerEl)
       .setName(t("settingsNotesFolderName"))

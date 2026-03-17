@@ -28,8 +28,6 @@ export default class ZoteasyPlugin extends Plugin {
     this.addCommand({
       id: "import-note",
       name: t("cmdImportName"),
-      // Ctrl+Shift+I on Windows/Linux, Cmd+Shift+I on Mac
-      hotkeys: [{ modifiers: ["Mod", "Shift"], key: "I" }],
       callback: () => {
         new SearchModal(this.app, this.zoteroClient, (item) =>
           this.importNote(item)
@@ -40,8 +38,6 @@ export default class ZoteasyPlugin extends Plugin {
     this.addCommand({
       id: "insert-citation",
       name: t("cmdCitationName"),
-      // Ctrl+Shift+Z on Windows/Linux, Cmd+Shift+Z on Mac
-      hotkeys: [{ modifiers: ["Mod", "Shift"], key: "Z" }],
       // editorCallback captures the active editor at invocation time, ensuring
       // the citation lands in the right note even if the user switches panes.
       // The command is also automatically disabled when no editor is active.
@@ -56,8 +52,6 @@ export default class ZoteasyPlugin extends Plugin {
     this.addCommand({
       id: "rebase-notes",
       name: t("cmdRebaseName"),
-      // Ctrl+Shift+U on Windows/Linux, Cmd+Shift+U on Mac
-      hotkeys: [{ modifiers: ["Mod", "Shift"], key: "U" }],
       callback: () => {
         void this.rebaseAllNotes();
       },
