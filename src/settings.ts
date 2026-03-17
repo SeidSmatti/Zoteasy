@@ -112,10 +112,10 @@ export class ZoteasySettingTab extends PluginSettingTab {
       .setDesc(t("settingsNotesFolderDesc"))
       .addText((text) =>
         text
-          .setPlaceholder("Literature Notes")
+          .setPlaceholder("Literature notes")
           .setValue(this.plugin.settings.outputFolder)
           .onChange(async (value) => {
-            this.plugin.settings.outputFolder = value.trim() || "Literature Notes";
+            this.plugin.settings.outputFolder = value.trim() || "Literature notes";
             await this.plugin.saveSettings();
           })
       );
